@@ -3,10 +3,12 @@ import { Article } from "../../../types"
 
 export const ArticleItem: React.FC<Article> = ({ name, review, date }) => {
   const nameArr = name.split(" ")
-  const formatedName = `${nameArr[0]} ${nameArr[1][0]}.`
+  const formattedName = `${nameArr[0]}  ${
+    nameArr[1] ? nameArr[1][0] + "." : ""
+  }`
   return (
     <div>
-      {formatedName} {review} {date}
+      {formattedName} {review} {date}
     </div>
   )
 }
